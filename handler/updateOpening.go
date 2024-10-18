@@ -7,6 +7,8 @@ import (
 	"github.com/stringGustavo/gopportunities.git/schemas"
 )
 
+
+
 func UpdateOpeningHandler(ctx *gin.Context) {
 	request := UpdateOpeningRequest{}
 

@@ -215,6 +215,20 @@ const docTemplate = `{
                 }
             }
         },
+        "handler.ShowAllOpeningsResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/schemas.OpeningResponse"
+                    }
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "handler.ShowOpeningResponse": {
             "type": "object",
             "properties": {
