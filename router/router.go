@@ -10,5 +10,5 @@ func Initialize() {
 	initializeRoutes(router)
 	
 	// Run the server
-	router.Run(":8080")
+	router.Run("localhost:8080")
 }
