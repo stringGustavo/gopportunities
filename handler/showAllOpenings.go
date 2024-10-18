@@ -16,7 +16,7 @@ import (
 // @Produce json
 // @Success 200 {object} ShowAllOpeningsResponse
 // @Failure 500 {object} ErrorResponse
-// @Router /opening [get]
+// @Router /openings [get]
 func ShowAllOpeningsHandler(ctx *gin.Context) {
 	openings := []schemas.Opening{}
 
