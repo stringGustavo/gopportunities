@@ -29,7 +29,7 @@ func GetSQLite() *gorm.DB {
 	return db
 }
 
-func GetLogger(p string) *Logger {
-	logger = NewLogger(os.Stdout, p)
+func GetLogger(prefix string) *Logger {
+	logger = NewLogger(os.Stdout, prefix)
 	return logger
 }
