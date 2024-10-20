@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"os"
 
 	"gorm.io/gorm"
 )
@@ -29,7 +30,6 @@ func GetSQLite() *gorm.DB {
 }
 
 func GetLogger(p string) *Logger {
-	// Initialize Logger
-	logger = NewLogger(p)
+	logger = NewLogger(os.Stdout, p)
 	return logger
 }

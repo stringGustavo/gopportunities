@@ -14,15 +14,14 @@ type Logger struct {
 	writer  io.Writer
 }
 
-func NewLogger(p string) *Logger {
-	writer := io.Writer(os.Stdout)
-	logger := log.New(writer, p, log.Ldate|log.Ltime)
+func NewLogger(writer io.Writer, prefix string) *Logger {
+	if writer == nil { writer = os.Stdout }
 
-	return &Logger{
-		debug:   log.New(writer, "DEBUG: ", logger.Flags()),
-		info:    log.New(writer, "INFO: ", logger.Flags()),
-		warning: log.New(writer, "WARNING: ", logger.Flags()),
-		err:     log.New(writer, "ERROR: ", logger.Flags()),
+	return &Logger {
+		debug:   log.New(writer, prefix+"DEBUG: ", log.Ldate|log.Ltime|log.Lshortfile),
+		info:    log.New(writer, prefix+"INFO: ", log.Ldate|log.Ltime),
+		warning: log.New(writer, prefix+"WARNING: ", log.Ldate|log.Ltime),
+		err:     log.New(writer, prefix+"ERROR: ", log.Ldate|log.Ltime|log.Lshortfile),
 		writer:  writer,
 	}
 }
